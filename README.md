@@ -12,7 +12,7 @@ A quick word count plugin for Vim, perfect for adding to your statusline
 `set runtimepath+=$HOME/.vim/bundle/wordCount.vim`
 
 #Usage
-This plugin provides the function `WordCount()` which returns a count of the number of words in the buffer, as well as the command `WordCount` which prints out the word count.
+This plugin provides the function `wordCount#WordCount()` which returns a count of the number of words in the buffer, as well as the command `WordCount` which prints out the word count.
 
 #Conservative updating (enabled by default)
 The conservative updating option `g:wc_conservative_update` forces the plugin to only update the word count when one of the following events occurs:
@@ -23,4 +23,4 @@ The conservative updating option `g:wc_conservative_update` forces the plugin to
 This is useful if you plan to add the word count to your `statusline`.
 
 #Adding a word count to your statusline
-This can be done simply with `set statusline+=%{WordCount()}`
+This can be done simply with `set statusline+=%{wordCount#WordCount()}`
