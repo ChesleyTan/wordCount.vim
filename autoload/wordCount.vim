@@ -14,12 +14,12 @@ endfunction
 
 function! wordCount#WordCount()
     if g:wc_conservative_update != 1
-        call s:updateWordCount()
+        call wordCount#UpdateWordCount()
     endif
     return s:wc
 endfunction
 
-function! s:updateWordCount()
+function! wordCount#UpdateWordCount()
     let bufc=getline(1, '$')
     if bufc != s:buf_cache
         let s:buf_cache = bufc
@@ -38,9 +38,9 @@ if g:wc_conservative_update == 1
     " Only update the word count upon entering a buffer, leaving insert mode or
     " changing text in normal mode
     augroup WordCount
-        autocmd InsertLeave * call s:updateWordCount()
-        autocmd TextChanged * call s:updateWordCount()
-        autocmd BufEnter * call s:updateWordCount()
+        autocmd InsertLeave * call wordCount#UpdateWordCount()
+        autocmd TextChanged * call wordCount#UpdateWordCount()
+        autocmd BufEnter * call wordCount#UpdateWordCount()
     augroup END
 endif
 

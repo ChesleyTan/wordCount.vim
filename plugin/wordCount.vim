@@ -1,1 +1,1 @@
-command! WordCount echo wordCount#WordCount()
+command! WordCount call wordCount#UpdateWordCount() | echo wordCount#WordCount()
